@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal Mention and Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .calculator {
+      margin-top: 20px;
+    }
+
+    .calculator input[type="number"] {
+      width: 80px;
+    }
+
+    .calculator button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #555;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Personal Mention and Calculator Page!</h1>
+  <p>This website is dedicated to Preetham.</p>
+  <p>Feel free to use the calculator below:</p>
+  
+  <div class="calculator">
+    <input type="number" id="num1" placeholder="Number 1" />
+    <input type="number" id="num2" placeholder="Number 2" />
+    <br />
+    <button onclick="calculate('+')">Add</button>
+    <button onclick="calculate('-')">Subtract</button>
+    <button onclick="calculate('*')">Multiply</button>
+    <button onclick="calculate('/')">Divide</button>
+    <br />
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var resultElement = document.getElementById('result');
+      var result;
+
+      switch (operation) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num1 / num2;
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      resultElement.innerHTML = "Result: " + result;
+    }
+  </script>
+  <a href="about.html">Learn more about Mr. Preetham</a>
+</body>
+</html>
